@@ -168,9 +168,73 @@ void BlastActor::create_actor() {
     TkActorDesc actor_desc = {};   // The TkActorDesc constructor sets sane default values for the base (NvBlastActorDesc) fields, giving uniform chunk and bond healths of 1.0.
     actor_desc.asset = asset; // This field of TkActorDesc must be set to a valid asset pointer.
     actor = framework->createActor(actor_desc);
+
+    // Stress
+    TkFamily& m_family = actor->getFamily();
+	NvBlastFamily* familyLL = const_cast<NvBlastFamily*>(m_family.getFamilyLL());
+	if (familyLL == NULL) {
+        printf("Family is null\n");
+        return;
+    }
+    Nv::Blast::ExtStressSolverSettings settings;
+    m_solver = ExtStressSolver::create(*familyLL, settings);
 }
 
-void BlastActor::apply_radial_damage(Vector3 position, float damage, float min_radius, float max_radius) {
+void BlastActor::stress_update(bool do_damage) {
+	for (auto it = bodies.getIterator(); !it.done(); ++it)
+	{
+		const BlastActor* actor = *it;
+        RigidBody3D* actor_body = actor->body;
+
+		if (actor_body->is_freeze_enabled())
+		{
+			Vector3 gravity = actor_body->get_gravity();
+			Vector3 localGravity = actor_body->get_global_basis().xform_inv(gravity);
+
+			m_solver->addGravityForce(*actor->actor->getActorLL(), {localGravity.x, localGravity.y, localGravity.z});
+		}
+		else
+		{
+            /*
+			PxVec3 localCenterMass = rigidDynamic.getCMassLocalPose().p;
+			PxVec3 localAngularVelocity = rigidDynamic.getGlobalPose().rotateInv(rigidDynamic.getAngularVelocity());
+			m_solver->addAngularVelocity(*actor->getTkActor().getActorLL(), fromPxShared(localCenterMass), fromPxShared(localAngularVelocity));
+            */
+		}
+	}
+
+	m_solver->update();
+
+	if (do_damage && m_solver->getOverstressedBondCount() > 0)
+	{
+		NvBlastFractureBuffers commands;
+		m_solver->generateFractureCommands(commands);
+		if (commands.bondFractureCount > 0)
+		{
+            TkFamily& family = actor->getFamily();
+			family.applyFracture(&commands);
+		}
+	}
+}
+
+void BlastActor::stress_actor_created(BlastActor* body) {
+    /*
+    TkActor* body_actor = body->actor;
+	if (m_solver->notifyActorCreated(*body_actor->getActorLL()))
+	{
+		//bodies.insert(body);
+	}
+    */
+}
+
+void BlastActor::stress_actor_destroyed(BlastActor* body) {
+    TkActor* body_actor = body->actor;
+	m_solver->notifyActorDestroyed(*body_actor->getActorLL());
+	bodies.erase(body);
+}
+
+
+void BlastActor::apply_radial_damage(Vector3 position, float damage_in_health, float min_radius, float max_radius) {
     ERR_FAIL_COND(actor == nullptr);
     ERR_FAIL_COND(material == nullptr);
 
@@ -179,7 +243,7 @@ void BlastActor::apply_radial_damage(Vector3 position, float damage, float min_r
 
     // Memory leaky, alloc once and store
     NvBlastExtRadialDamageDesc* damageDesc = new NvBlastExtRadialDamageDesc();
-    damageDesc->damage = damage;
+    damageDesc->damage = material->getNormalizedDamage(damage_in_health);
     damageDesc->position[0] = (float)position.x;
     damageDesc->position[1] = (float)position.y;
     damageDesc->position[2] = (float)position.z;
@@ -195,7 +259,7 @@ void BlastActor::apply_radial_damage(Vector3 position, float damage, float min_r
 }
 
 
-void BlastActor::apply_spread_damage(Vector3 position, float damage, float min_distance, float max_distance) {
+void BlastActor::apply_spread_damage(Vector3 position, float damage_in_health, float min_distance, float max_distance) {
     ERR_FAIL_COND(actor == nullptr);
     ERR_FAIL_COND(material == nullptr);
 
@@ -204,7 +268,7 @@ void BlastActor::apply_spread_damage(Vector3 position, float damage, float min_d
 
     // Memory leaky, alloc once and store
     NvBlastExtImpactSpreadDamageDesc* damageDesc = new NvBlastExtImpactSpreadDamageDesc();
-    damageDesc->damage = damage;
+    damageDesc->damage = material->getNormalizedDamage(damage_in_health);
     damageDesc->position[0] = (float)position.x;
     damageDesc->position[1] = (float)position.y;
     damageDesc->position[2] = (float)position.z;
@@ -220,10 +284,12 @@ void BlastActor::apply_spread_damage(Vector3 position, float damage, float min_d
 }
 
 
+// TODO: Shear damage
+// TODO: Triangle damage for slicing
 
 
 
-Array BlastActor::get_chunks() {
+godot::Array BlastActor::get_chunks() {
     return blast_chunks; // this is useless and will be removed
 }
 
@@ -322,7 +388,11 @@ void BlastActor::_bind_methods() {
 
     ClassDB::bind_method(D_METHOD("set_material", "health", "min_damage_threshold", "max_damage_threshold"), &BlastActor::set_material);
     
-    
+    ClassDB::bind_method(D_METHOD("set_body"), &BlastActor::set_body);
+
+    ClassDB::bind_method(D_METHOD("stress_update"), &BlastActor::stress_update);
+    ClassDB::bind_method(D_METHOD("stress_actor_created"), &BlastActor::stress_actor_created);
+    ClassDB::bind_method(D_METHOD("stress_actor_destroyed"), &BlastActor::stress_actor_destroyed);
 
 }
 
@@ -410,7 +480,7 @@ void BlastGroup::process() {
 
 void BlastGroup::split_event(const TkSplitEvent* split_event) {
     // Instead of doing this slow bullshit we should just call a script callback
-    Array new_actors;
+    godot::Array new_actors;
     for (uint32_t j = 0; j < split_event->numChildren; ++j) {
         BlastActor* new_actor = memnew(BlastActor(split_event->children[j]));
         new_actors.append(new_actor);

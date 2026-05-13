@@ -18,6 +18,11 @@
 #include "sdk/toolkit/include/NvBlastTk.h"
 #include "sdk/extensions/shaders/include/NvBlastExtDamageShaders.h"
 
+// Stress
+#include "sdk/extensions/stress/include/NvBlastExtStressSolver.h"
+#include "NvBlastArray.h"
+#include "NvBlastHashSet.h"
+
 #include "GDBlastSingleton.h"
 
 using namespace Nv::Blast;
@@ -123,12 +128,12 @@ public:
     BlastChunk* add_chunk(uint32_t parent_chunk, Vector3 centroid, float volume, bool is_support, uint32_t userdata, bool is_static);
     
     void create_actor();
-    void apply_radial_damage(Vector3 position, float damage, float min_radius, float max_radius);
-    void apply_spread_damage(Vector3 position, float damage, float min_distance, float max_distance);
+    void apply_radial_damage(Vector3 position, float damage_in_health, float min_radius, float max_radius);
+    void apply_spread_damage(Vector3 position, float damage_in_health, float min_distance, float max_distance);
 
     uint32_t get_visible_chunk_count();
     PackedInt32Array get_visible_chunk_indices();
-    Array get_chunks();
+    godot::Array get_chunks();
 
 
 
@@ -138,17 +143,30 @@ public:
     uint64_t get_userdata();
     PackedInt32Array get_joints();
 
-    NvBlastExtMaterial* material;
-    TkActor* actor;
-    NvBlastExtProgramParams* params;
+    NvBlastExtMaterial* material = nullptr;
+    TkActor* actor = nullptr;
+    NvBlastExtProgramParams* params = nullptr;
 
     Variant userdata;
 
     PackedInt32Array chunk_indices;
-    Array blast_chunks;
+    godot::Array blast_chunks;
 
     std::vector<NvBlastChunkDesc> chunks;
     std::vector<NvBlastBondDesc> bonds;
+
+    // Stress
+	ExtStressSolver* m_solver = nullptr;
+	HashSet<BlastActor*>::type bodies;
+    RigidBody3D* body = nullptr;
+
+    void set_body(RigidBody3D* p_body) {
+        body = p_body;
+    }
+
+    void stress_update(bool do_damage);
+    void stress_actor_created(BlastActor* actor);
+    void stress_actor_destroyed(BlastActor* actor);
 
 };
 
@@ -169,8 +187,9 @@ public:
     void process();
     void split_event(const TkSplitEvent* split_event);
 
-    TkGroup* group;
-    BlastListener* listener;
+    TkGroup* group = nullptr;
+    BlastListener* listener = nullptr;
 };
+
 
 #endif // BlastActor_CLASS_H

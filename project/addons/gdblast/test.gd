@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 			q.collision_mask = 0xFFFFFFFF
 			result = dss.intersect_ray(q)
 		if !result.is_empty():
+			DebugDraw.draw_box(result.position, Vector3.ONE * 1.0, Color.RED, 60)
 			apply_radial_damage(result.position, 1.0, 0.1, 0.1, 50.0)
 
 func fire_projectile(from: Vector3, to: Vector3) -> void:
@@ -58,7 +59,7 @@ func fire_projectile(from: Vector3, to: Vector3) -> void:
 	shape.radius = 0.2
 	bullet.continuous_cd = true
 	bullet.global_position = from
-	bullet.mass = 10.0
+	bullet.mass = 100.0
 	bullet.linear_velocity = from.direction_to(to) * 100.0
 
 func apply_radial_damage(pos: Vector3, damage: float, min_radius: float = 1.0, max_radius: float = 1.0, explosive: float = 10.0) -> void:

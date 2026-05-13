@@ -20,6 +20,12 @@ var blast_group: BlastGroup
 var debug_drawer: ImmediateMesh
 var mass_per_chunk: float = 0.0
 
+var health: float = 20.0
+## Ignore damage below health * min_damage
+var min_damage: float = 0.1
+## Less than 1.0 means it will take at minimum 2 hits to break
+var max_damage: float = 1.0
+
 func _ready() -> void:
 	if facade: facade.hide()
 	
@@ -37,16 +43,17 @@ func _ready() -> void:
 	for child: Node in get_children():
 		if child is CollisionShape3D:
 			colliders.append(child)
-			var chunk_pos: Vector3 = to_global(child.position) # Position is local to this
+			var chunk_pos: Vector3 = child.position # Position is local to this
 			var child_mesh: MeshInstance3D = child.get_child(0)
 			var anchor: bool = chunk_pos.y < 0.1 if anchor_ground else false
 			anchor = anchor or child_mesh.name.contains("anchor")
-			chunks.append(blast_actor.add_chunk(UINT32_MAX, chunk_pos, 3.0, true, 0, anchor))
+			chunks.append(blast_actor.add_chunk(UINT32_MAX, chunk_pos, 1.0, true, 0, anchor))
 			child.reparent(test_body, true)
 	mass_per_chunk = total_mass / chunks.size()
 	
 	await get_tree().physics_frame
 	
+	var bond_normal: Vector3 = Vector3(1,0,0) # +x
 	var dss: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 	for i: int in range(colliders.size()):
 		# Physics test
@@ -56,7 +63,7 @@ func _ready() -> void:
 		query.collision_mask = 0xFFFFFFFFF
 		query.transform = collider.global_transform
 		query.margin = 0.2 # + 0.2
-		query.exclude = [collider]
+		#query.exclude = [collider]
 		var adj_shapes: Array[Dictionary] = dss.intersect_shape(query, 4)
 		
 		for adj_shape: Dictionary in adj_shapes:
@@ -64,7 +71,10 @@ func _ready() -> void:
 				var adj_shape_id = adj_shape.shape
 				var j: int = adj_shape_id
 				if i != j:
-					blast_actor.add_bond(i, j, (collider.global_position + adj_shape.collider.global_position) * 0.5, collider.global_position.direction_to(adj_shape.collider.global_position), 1.0 * 2.0)
+					blast_actor.add_bond(i, j, 
+						collider.global_position.lerp(adj_shape.collider.global_position, 0.5), 
+						bond_normal, 
+						1.0)
 	
 	for child: Node in test_body.get_children():
 		child.reparent(self, true)
@@ -121,6 +131,9 @@ func on_actor_created(actor: BlastActor, pose: Transform3D, linear_velocity: Vec
 	rigidbody.angular_velocity = angular_velocity
 	rigidbody.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
 
+	actor.set_body(rigidbody)
+	actor.stress_actor_created(actor)
+	
 	# Reparent chunks
 	var chunk_indices: PackedInt32Array = actor.get_visible_chunk_indices()
 	#var centroid: Vector3 = Vector3.ZERO
@@ -147,7 +160,7 @@ func on_actor_created(actor: BlastActor, pose: Transform3D, linear_velocity: Vec
 	if chunk_indices.size() > 1:
 		rigidbody.custom_integrator = true
 		rigidbody.contact_monitor = true
-		rigidbody.max_contacts_reported = 6
+		rigidbody.max_contacts_reported = 128
 		PhysicsServer3D.body_set_force_integration_callback(rigidbody.get_rid(), integrate_forces, rigidbody)
 	
 	rigidbody.mass = chunks.size() * mass_per_chunk
@@ -155,6 +168,7 @@ func on_actor_created(actor: BlastActor, pose: Transform3D, linear_velocity: Vec
 	
 	rigidbody.sleeping = false
 	actor.set_userdata(rigidbody.get_instance_id())
+	actor.set_material(health, min_damage, max_damage)
 	actors[rigidbody] = actor
 
 func on_actor_destroyed(instance_id: int) -> Array:
@@ -199,43 +213,38 @@ func global_to_blast(global_pos: Vector3, ba: BlastAssetGD, rb: RigidBody3D) -> 
 	return ba.global_position + ( (ba.global_basis * (rb.global_transform.affine_inverse() * global_pos)) * 0.5 )
 
 var damaged: bool = false
-var impact_damage: Array = []
-var force_threshold: float = 1.0 #5.0
-
-func _physics_process(delta: float) -> void:
-	if damaged:
-		damaged = false
-		#for damage: Array in impact_damage:
-			#var ba: BlastActor = damage[0]
-			#var pos: Vector3 = damage[1]
-			#var force: Vector3 = damage[2]
-			#ba.apply_spread_damage(pos, 1.0, 1.0, 1.0)
-		blast_group.process()
-		#impact_damage.clear()
+var force_threshold: float = 10.0 #5.0
 
 func integrate_forces(state: PhysicsDirectBodyState3D, rigidbody: RigidBody3D) -> void:
 	if !state.sleeping:
 		if actors.has(rigidbody):
-			if impact_damage.size() < 100:
-				var blast_actor: BlastActor = actors[rigidbody]
-				var contact_count: int = state.get_contact_count()
+			var blast_actor: BlastActor = actors[rigidbody]
+			var contact_count: int = state.get_contact_count()
+			
+			for contact: int in range(contact_count):
+				var velocity_delta: Vector3 = state.get_contact_local_velocity_at_position(contact) - state.get_contact_collider_velocity_at_position(contact)#rigidbody.linear_velocity + rigidbody.angular_velocity
+				var colliding_body: Object = state.get_contact_collider_object(contact)
 				
-				for contact: int in range(contact_count):
-					var velocity_delta: Vector3 = state.get_contact_local_velocity_at_position(contact) - state.get_contact_collider_velocity_at_position(contact)#rigidbody.linear_velocity + rigidbody.angular_velocity
-					var colliding_body: Object = state.get_contact_collider_object(contact)
-					
-					var mass: float = rigidbody.mass
-					if colliding_body is RigidBody3D:
-						mass += colliding_body.mass
-					
-					var contact_normal: Vector3 = state.get_contact_local_normal(contact)
-					var force_vector: Vector3 = -contact_normal * velocity_delta * mass * state.step
-					var force_power: float = force_vector.length() * Engine.time_scale
-					
-					if force_power > force_threshold:
-						damaged = true
-						var pos: Vector3 = global_to_blast(state.get_contact_collider_position(contact), self, rigidbody)
-						blast_actor.apply_spread_damage(pos, lerp(0.0, 1.0, clamp(force_power, 0.0, 100.0)), 0.0, 2.5)
-						#impact_damage.append([blast_actor, pos, force_vector])
+				var mass: float = rigidbody.mass
+				if colliding_body is RigidBody3D:
+					mass += colliding_body.mass
+				
+				var contact_normal: Vector3 = state.get_contact_local_normal(contact)
+				var force_vector: Vector3 = -contact_normal * velocity_delta * mass * state.step
+				var force_power: float = force_vector.length() * Engine.time_scale
+				
+				if force_power > force_threshold:
+					damaged = true
+					var pos: Vector3 = global_to_blast(state.get_contact_collider_position(contact), self, rigidbody)
+					var max_force: float = 100.0
+					var damage: float = force_power * 0.2
+					var max_range: float = 0.8
+					var range: float = 1.0 #(max_force / clamp(damage, 0.0, max_force)) * max_range
+					blast_actor.apply_spread_damage(pos, damage, 0.5, range)
+					DebugDraw.draw_box(state.get_contact_collider_position(contact), Vector3.ONE * range, Color.RED, 60)
+	
+	if damaged:
+		damaged = false
+		blast_group.process()
 	
 	state.integrate_forces()
