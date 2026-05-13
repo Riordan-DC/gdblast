@@ -27,3 +27,4 @@ Concepts
     Stress simulation uses the family.
 * TkGroup
     Created to organize actors into work groups. Useful for multithreading.
+    Listens and produces split signals
