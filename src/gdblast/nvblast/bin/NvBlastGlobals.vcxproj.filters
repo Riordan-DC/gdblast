@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAssert.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source\NvBlastGlobals.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source\NvBlastProfiler.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAssert.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source\NvBlastProfilerInternal.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include\NvBlastGlobals.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include\NvBlastAllocator.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include\NvBlastProfiler.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include\NvBlastDebugRender.h">
+      <Filter>public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{FB62F18A-C7F1-3C46-8AF9-9C422C9FA9BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{D6B1B491-B212-3E94-ABC4-A6CA87F98FED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{47F4B356-6565-3E91-AD5B-1DC34B50E470}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAssert.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\source\NvBlastExtStressSolver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAssert.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include\NvBlastExtStressSolver.h">
+      <Filter>public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{FB62F18A-C7F1-3C46-8AF9-9C422C9FA9BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{D6B1B491-B212-3E94-ABC4-A6CA87F98FED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{AF8EF060-6F92-3E78-AD37-708759C3D49F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

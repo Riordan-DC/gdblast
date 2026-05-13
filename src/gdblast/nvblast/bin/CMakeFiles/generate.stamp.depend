@@ -1,0 +1,36 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/3.26.0-rc3/CMakeCXXCompiler.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/3.26.0-rc3/CMakeRCCompiler.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/3.26.0-rc3/CMakeSystem.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/CMakeLists.txt
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/NvBlast.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/NvBlastExtAssetUtils.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/NvBlastExtShaders.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/NvBlastExtStress.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/NvBlastGlobals.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/NvBlastTk.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/modules/FindPxSharedSDK.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/windows/CMakeLists.txt
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/windows/NvBlast.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/windows/NvBlastExtAssetUtils.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/windows/NvBlastExtShaders.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/windows/NvBlastGlobals.cmake
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/compiler/cmake/windows/NvBlastTk.cmake
+C:/packman-repo/chk/CMakeModules/1.1.0/SetOutputPaths.cmake

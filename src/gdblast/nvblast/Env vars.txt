@@ -1,0 +1,37 @@
+Guide to getting this bullshit to build
+
+First: this shit isnt maintained well.
+
+1. Packman. If you download nvblast it comes with an old version of nvidias package manager packman. Their
+gitlab link doesnt work so I cant download a newer packman. Luckily PhysX is better maintained and includes a newer
+packman. I copied that in and modified the build scripts so it could compile. This whole endevour was a waste of time
+because in the end I just ended up copying the sdk and only compiling libs and not samples. Its too many depedencies.
+
+2. This was built to work with VS 2017 and v141 toolset. Nobody uses that so I use VS 2022 and whatever new toolset. 
+This causes a minor but easy to fix error in PhysX shared where you must change typeinfo.h to just typeinfo. No big deal.
+
+3. I needed the extension for shaders, asset utils, and stress. This required a small modification to change
+std::pow to just pow. 
+
+Env vars
+PM_CMakeModules_PATH  C:\packman-repo\chk\CMakeModules\1.1.0
+
+Cmake defines
+
+# Riordans fun stuff
+SET(BLAST_ROOT_DIR C:/Users/Riordan/Documents/Games/fps3/src/nvblast)
+SET(BL_LIB_OUTPUT_DIR C:/Users/Riordan/Documents/Games/fps3/src/nvblast/lib)
+SET(BL_DLL_OUTPUT_DIR C:/Users/Riordan/Documents/Games/fps3/src/nvblast/lib)
+SET(BL_EXE_OUTPUT_DIR C:/Users/Riordan/Documents/Games/fps3/src/nvblast/bin)
+SET(TARGET_BUILD_PLATFORM Windows)
+SET(PXSHAREDSDK C:/packman-repo/chk/PhysX-win.x86_64.vc150/3.4.24990349/PxShared)
+SET(PXSHAREDSDK_PATH C:/packman-repo/chk/PhysX-win.x86_64.vc150/3.4.24990349/PxShared)
+SET(PXSHAREDSDK_LIBS_DEBUG  C:/packman-repo/chk/PhysX-win.x86_64.vc150/3.4.24990349/Lib)
+SET(PXSHAREDSDK_LIBS_RELEASE C:/packman-repo/chk/PhysX-win.x86_64.vc150/3.4.24990349/Lib)
+SET(PXSHAREDSDK_INCLUDE_DIRS, C:/packman-repo/chk/PhysX-win.x86_64.vc150/3.4.24990349/PxShared/include)
+SET(PXSHAREDSDK_DLLS C:/packman-repo/chk/PhysX-win.x86_64.vc150/3.4.24990349/Bin)
+# Riordans stuff end
+
+Toolchain
+-T v141 (doesnt work, dont use, only works with VS 2017)
+-A x64

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\x64\debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\NvBlastDEBUG_x64.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\NvBlastGlobalsDEBUG_x64.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\NvBlastExtShadersDEBUG_x64.dll</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

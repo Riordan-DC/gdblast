@@ -1,0 +1,8 @@
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/NvBlast.dir
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/NvBlastGlobals.dir
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/NvBlastTk.dir
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/NvBlastExtShaders.dir
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/NvBlastExtStress.dir
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/NvBlastExtAssetUtils.dir
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/ALL_BUILD.dir
+C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/ZERO_CHECK.dir

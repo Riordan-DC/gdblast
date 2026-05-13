@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\Riordan\Documents\Games\fps3\src\gdblast\nvblast\bin\x64\release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Riordan\Documents\Games\fps3\src\gdblast\nvblast\bin\NvBlast_x64.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Riordan\Documents\Games\fps3\src\gdblast\nvblast\bin\NvBlastGlobals_x64.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Riordan\Documents\Games\fps3\src\gdblast\nvblast\bin\NvBlastTk_x64.dll</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

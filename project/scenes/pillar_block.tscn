@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbpp0jm6ugltr"]
+
+[ext_resource type="PackedScene" uid="uid://d3bojq2a73gxj" path="res://models/demo_assets.glb" id="1_ilnn1"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="demo_assets" parent="." instance=ExtResource("1_ilnn1")]
+
+[editable path="demo_assets"]

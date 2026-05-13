@@ -1,0 +1,54 @@
+[configuration]
+
+entry_symbol = "gdblast_library_init"
+compatibility_minimum = "4.3"
+reloadable = true
+
+[libraries]
+
+macos.debug = "res://bin/gdblast.macos.template_debug.framework"
+macos.release = "res://bin/gdblast.macos.template_release.framework"
+
+ios.debug = "res://bin/gdblast.ios.template_debug.xcframework"
+ios.release = "res://bin/gdblast.ios.template_release.xcframework"
+
+windows.debug.x86_32 = "res://bin/gdblast.windows.template_debug.x86_32.dll"
+windows.release.x86_32 = "res://bin/gdblast.windows.template_release.x86_32.dll"
+windows.debug.x86_64 = "res://bin/gdblast.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://bin/gdblast.windows.template_release.x86_64.dll"
+
+linux.debug.x86_64 = "res://bin/gdblast.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "res://bin/gdblast.linux.template_release.x86_64.so"
+linux.debug.arm64 = "res://bin/gdblast.linux.template_debug.arm64.so"
+linux.release.arm64 = "res://bin/gdblast.linux.template_release.arm64.so"
+linux.debug.rv64 = "res://bin/gdblast.linux.template_debug.rv64.so"
+linux.release.rv64 = "res://bin/gdblast.linux.template_release.rv64.so"
+
+android.debug.x86_64 = "res://bin/gdblast.android.template_debug.x86_64.so"
+android.release.x86_64 = "res://bin/gdblast.android.template_release.x86_64.so"
+android.debug.arm64 = "res://bin/gdblast.android.template_debug.arm64.so"
+android.release.arm64 = "res://bin/gdblast.android.template_release.arm64.so"
+
+[dependencies]
+ios.debug = {
+	"res://bin/libgodot-cpp.ios.template_debug.xcframework": ""
+}
+ios.release = {
+	"res://bin/libgodot-cpp.ios.template_release.xcframework": ""
+}
+windows.debug.x86_64 = {
+    "res://bin/NvBlastDEBUG_x64.dll" : "",
+    "res://bin/NvBlastTkDEBUG_x64.dll" : "",
+    "res://bin/NvBlastExtAssetUtilsDEBUG_x64.dll" : "",
+    "res://bin/NvBlastExtShadersDEBUG_x64.dll" : "",
+    "res://bin/NvBlastExtStressDEBUG_x64.dll" : "",
+    "res://bin/NvBlastGlobalsDEBUG_x64.dll" : "",
+}
+windows.release.x86_64 = {
+    "res://bin/NvBlast_x64.dll" : "",
+    "res://bin/NvBlastTk_x64.dll" : "",
+    "res://bin/NvBlastExtAssetUtils_x64.dll" : "",
+    "res://bin/NvBlastExtShaders_x64.dll" : "",
+    "res://bin/NvBlastExtStress_x64.dll" : "",
+    "res://bin/NvBlastGlobals_x64.dll" : "",
+}

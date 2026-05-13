@@ -1,0 +1,8 @@
+exports/
+godot-cpp/
+src/PhysX-win.x86_64.vc150/
+*.pdb
+*.tlog
+src/**/*.obj
+src/**/*.log
+.vs/

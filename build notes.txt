@@ -1,0 +1,3 @@
+scons platform=windows -j10 target=template_debug debug_symbols=yes
+
+scons platform=windows -j10 target=template_release debug_symbols=yes

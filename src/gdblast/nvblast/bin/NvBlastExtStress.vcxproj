@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="profile|x64">
+      <Configuration>profile</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="checked|x64">
+      <Configuration>checked</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{26E306B2-1C1D-3AF3-A9B2-A8AA30B83C9B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>NvBlastExtStress</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">NvBlastExtStress.dir\debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">NvBlastExtStressDEBUG_x64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='profile|x64'">C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='profile|x64'">NvBlastExtStress.dir\profile\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='profile|x64'">NvBlastExtStressPROFILE_x64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='profile|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='profile|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='profile|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='checked|x64'">C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='checked|x64'">NvBlastExtStress.dir\checked\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='checked|x64'">NvBlastExtStressCHECKED_x64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='checked|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='checked|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='checked|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">NvBlastExtStress.dir\release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='release|x64'">NvBlastExtStress_x64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='release|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+ /RTCsu</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);CAPNP_LITE=1;_HAS_EXCEPTIONS=0;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CONSOLE;_DEBUG;NV_DEBUG=1;CMAKE_INTDIR="debug";NvBlastExtStress_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;CAPNP_LITE=1;_HAS_EXCEPTIONS=0;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CONSOLE;NV_DEBUG=1;CMAKE_INTDIR=\"debug\";NvBlastExtStress_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\lib\NvBlastGlobalsDEBUG_x64.lib;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\lib\NvBlastDEBUG_x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/lib/NvBlastExtStressDEBUG_x64.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/NvBlastExtStressDEBUG_x64.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);CAPNP_LITE=1;_HAS_EXCEPTIONS=0;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CONSOLE;NDEBUG;NV_PROFILE=1;CMAKE_INTDIR="profile";NvBlastExtStress_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;CAPNP_LITE=1;_HAS_EXCEPTIONS=0;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CONSOLE;NDEBUG;NV_PROFILE=1;CMAKE_INTDIR=\"profile\";NvBlastExtStress_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\lib\NvBlastGlobalsPROFILE_x64.lib;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\lib\NvBlastPROFILE_x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/lib/NvBlastExtStressPROFILE_x64.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/NvBlastExtStressPROFILE_x64.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);CAPNP_LITE=1;_HAS_EXCEPTIONS=0;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CONSOLE;NDEBUG;NV_CHECKED=1;CMAKE_INTDIR="checked";NvBlastExtStress_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;CAPNP_LITE=1;_HAS_EXCEPTIONS=0;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CONSOLE;NDEBUG;NV_CHECKED=1;CMAKE_INTDIR=\"checked\";NvBlastExtStress_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\lib\NvBlastGlobalsCHECKED_x64.lib;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\lib\NvBlastCHECKED_x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/lib/NvBlastExtStressCHECKED_x64.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/NvBlastExtStressCHECKED_x64.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);CAPNP_LITE=1;_HAS_EXCEPTIONS=0;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CONSOLE;NDEBUG;CMAKE_INTDIR="release";NvBlastExtStress_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;CAPNP_LITE=1;_HAS_EXCEPTIONS=0;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CONSOLE;NDEBUG;CMAKE_INTDIR=\"release\";NvBlastExtStress_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\pvd;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\task;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\filebuf;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\include\foundation;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\foundation\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\filebuf\include;C:\packman-repo\chk\PhysX-win.x86_64.vc150\3.4.24990349\PxShared\src\fastxml\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\include;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\globals\source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\lib\NvBlastGlobals_x64.lib;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\lib\NvBlast_x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/lib/NvBlastExtStress_x64.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/NvBlastExtStress_x64.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Building Custom Rule C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk -BC:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin --check-stamp-file C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeRCCompiler.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeSystem.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlast.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtAssetUtils.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtShaders.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtStress.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastGlobals.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastTk.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\modules\FindPxSharedSDK.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\CMakeLists.txt;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlast.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastExtAssetUtils.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastExtShaders.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastGlobals.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastTk.cmake;C:\packman-repo\chk\CMakeModules\1.1.0\SetOutputPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='debug|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='profile|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Building Custom Rule C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk -BC:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin --check-stamp-file C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeRCCompiler.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeSystem.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlast.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtAssetUtils.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtShaders.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtStress.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastGlobals.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastTk.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\modules\FindPxSharedSDK.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\CMakeLists.txt;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlast.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastExtAssetUtils.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastExtShaders.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastGlobals.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastTk.cmake;C:\packman-repo\chk\CMakeModules\1.1.0\SetOutputPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='profile|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='checked|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Building Custom Rule C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk -BC:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin --check-stamp-file C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeRCCompiler.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeSystem.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlast.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtAssetUtils.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtShaders.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtStress.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastGlobals.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastTk.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\modules\FindPxSharedSDK.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\CMakeLists.txt;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlast.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastExtAssetUtils.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastExtShaders.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastGlobals.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastTk.cmake;C:\packman-repo\chk\CMakeModules\1.1.0\SetOutputPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='checked|x64'">false</LinkObjects>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Building Custom Rule C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/sdk -BC:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin --check-stamp-file C:/Users/Riordan/Documents/Games/gdblast/src/gdblast/nvblast/bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeRCCompiler.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\3.26.0-rc3\CMakeSystem.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlast.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtAssetUtils.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtShaders.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastExtStress.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastGlobals.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\NvBlastTk.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\modules\FindPxSharedSDK.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\CMakeLists.txt;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlast.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastExtAssetUtils.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastExtShaders.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastGlobals.cmake;C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\compiler\cmake\windows\NvBlastTk.cmake;C:\packman-repo\chk\CMakeModules\1.1.0\SetOutputPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAssert.cpp" />
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAssert.h" />
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\source\NvBlastExtStressSolver.cpp" />
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\extensions\stress\include\NvBlastExtStressSolver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\ZERO_CHECK.vcxproj">
+      <Project>{665406F1-1271-3BAB-BE67-132BB413F2D4}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\NvBlast.vcxproj">
+      <Project>{E1524C4C-DACA-3C78-979B-98CFA58719F2}</Project>
+      <Name>NvBlast</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\bin\NvBlastGlobals.vcxproj">
+      <Project>{CCDBE2B5-EA78-3EA5-931A-93CAD3B9929D}</Project>
+      <Name>NvBlastGlobals</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

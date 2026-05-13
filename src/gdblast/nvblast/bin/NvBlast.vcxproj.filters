@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAssert.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAtomic.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastTime.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastTimers.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastActor.cpp">
+      <Filter>solver</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastFamilyGraph.cpp">
+      <Filter>solver</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastActorSerializationBlock.cpp">
+      <Filter>solver</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastAsset.cpp">
+      <Filter>solver</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastAssetHelper.cpp">
+      <Filter>solver</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastFamily.cpp">
+      <Filter>solver</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastIncludeWindows.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAssert.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastAtomic.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastDLink.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastFixedArray.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastFixedBitmap.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastFixedBoolArray.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastFixedPriorityQueue.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastGeometry.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastIndexFns.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastIteratorBase.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastMath.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastMemory.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastPreprocessorInternal.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\common\NvBlastTime.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include\NvBlast.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include\NvBlastPreprocessor.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include\NvBlastTypes.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include\NvCTypes.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\include\NvPreprocessor.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastActor.h">
+      <Filter>solver</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastFamilyGraph.h">
+      <Filter>solver</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastActorSerializationBlock.h">
+      <Filter>solver</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastAsset.h">
+      <Filter>solver</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastSupportGraph.h">
+      <Filter>solver</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastChunkHierarchy.h">
+      <Filter>solver</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\lowlevel\source\NvBlastFamily.h">
+      <Filter>solver</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Riordan\Documents\Games\gdblast\src\gdblast\nvblast\sdk\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{FB62F18A-C7F1-3C46-8AF9-9C422C9FA9BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{D6B1B491-B212-3E94-ABC4-A6CA87F98FED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="solver">
+      <UniqueIdentifier>{E944BF03-F7BC-319E-B781-991E59C0F638}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
