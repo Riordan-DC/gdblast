@@ -21,6 +21,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
     GDREGISTER_CLASS(BlastActor);
 	GDREGISTER_CLASS(BlastGroup);
 	GDREGISTER_CLASS(BlastChunk);
+	GDREGISTER_CLASS(BlastFamily);
 	GDREGISTER_CLASS(NvBlastFramework);
 	
 	framework = memnew(NvBlastFramework); // Creates the singleton globally

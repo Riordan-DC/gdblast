@@ -17,6 +17,7 @@ var actors: Dictionary = {}
 var colliders: Array[CollisionShape3D] = []
 var chunks: Array[BlastChunk] = []
 var blast_group: BlastGroup
+var blast_family: BlastFamily
 var debug_drawer: ImmediateMesh
 var mass_per_chunk: float = 0.0
 
@@ -81,7 +82,7 @@ func _ready() -> void:
 	
 	test_body.queue_free()
 	
-	blast_actor.create_actor()
+	blast_family = blast_actor.create_actor()
 	blast_group.add_actor(blast_actor)
 	
 	on_actor_created(blast_actor, global_transform)
@@ -176,6 +177,8 @@ func on_actor_destroyed(instance_id: int) -> Array:
 	var actor: BlastActor = actors[rigidbody]
 	var chunk_indices: PackedInt32Array = actor.get_visible_chunk_indices()
 	
+	blast_family.stress_actor_destroyed(actor)
+	
 	for node: int in chunk_indices:
 		var collider: CollisionShape3D = colliders[node]
 		collider.reparent(self, true)
@@ -206,6 +209,7 @@ func on_actor_split(old_userdata: Variant, new_actors: Array) -> void:
 	
 	# Create new bodies
 	for new_actor: BlastActor in new_actors:
+		blast_family.stress_actor_created(new_actor)
 		on_actor_created(new_actor, state[0], state[1], state[2])
 
 func global_to_blast(global_pos: Vector3, ba: BlastAssetGD, rb: RigidBody3D) -> Vector3:
@@ -245,13 +249,14 @@ func integrate_forces(state: PhysicsDirectBodyState3D, rigidbody: RigidBody3D) -
 				var max_range: float = 0.8
 				var range: float = 1.0 #(max_force / clamp(damage, 0.0, max_force)) * max_range
 				blast_actor.apply_spread_damage(pos, damage, 0.5, range)
-				DebugDraw.draw_box(state.get_contact_collider_position(contact), Vector3.ONE * range, Color.RED, 60)
+				#DebugDraw.draw_box(state.get_contact_collider_position(contact), Vector3.ONE * range, Color.RED, 60)
+	
+	state.integrate_forces()
 	
 	if damaged:
 		damaged = false
 		blast_group.process()
 		
-		#if Engine.get_physics_frames() % 60 == 0:
-			#blast_actor.stress_update(true)
+		if Engine.get_physics_frames() % 1 == 0:
+			blast_family.stress_update(true)
 	
-	state.integrate_forces()

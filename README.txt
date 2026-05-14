@@ -17,6 +17,9 @@ todo:
 . tutorial
 . debug for rendering bonds
 
+. create the BlastFamily object. Created once on initial create_actor.
+    . Manages stress
+
 Documentation
 =============
 

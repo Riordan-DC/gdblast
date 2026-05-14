@@ -111,6 +111,8 @@ public:
 //MAKE_TYPED_ARRAY(BlastChunk, Variant::OBJECT)
 //MAKE_TYPED_ARRAY_INFO(BlastChunk, Variant::OBJECT)
 
+class BlastFamily;
+
 class BlastActor : public RefCounted {
     GDCLASS(BlastActor, RefCounted);
 
@@ -127,7 +129,7 @@ public:
     void add_bond(int index_a, int index_b, Vector3 centroid, Vector3 normal, float unit_area);
     BlastChunk* add_chunk(uint32_t parent_chunk, Vector3 centroid, float volume, bool is_support, uint32_t userdata, bool is_static);
     
-    void create_actor();
+    BlastFamily* create_actor();
     void apply_radial_damage(Vector3 position, float damage_in_health, float min_radius, float max_radius);
     void apply_spread_damage(Vector3 position, float damage_in_health, float min_distance, float max_distance);
 
@@ -155,18 +157,72 @@ public:
     std::vector<NvBlastChunkDesc> chunks;
     std::vector<NvBlastBondDesc> bonds;
 
-    // Stress
-	ExtStressSolver* m_solver = nullptr;
-	HashSet<BlastActor*>::type bodies;
     RigidBody3D* body = nullptr;
 
     void set_body(RigidBody3D* p_body) {
         body = p_body;
     }
 
+};
+
+class BlastFamily : public RefCounted {
+    GDCLASS(BlastFamily, RefCounted);
+
+protected:
+    static void _bind_methods() {
+        ClassDB::bind_method(D_METHOD("stress_update"), &BlastFamily::stress_update);
+        ClassDB::bind_method(D_METHOD("stress_actor_created"), &BlastFamily::stress_actor_created);
+        ClassDB::bind_method(D_METHOD("stress_actor_destroyed"), &BlastFamily::stress_actor_destroyed);
+    }
+
+public:
+    BlastFamily(){};
+    BlastFamily(BlastActor* actor) : family(&actor->actor->getFamily()) {
+        // Stress
+        NvBlastFamily *familyLL = const_cast<NvBlastFamily *>(family->getFamilyLL());
+        if (familyLL == NULL)
+        {
+            printf("Family is null\n");
+            return;
+        }
+        Nv::Blast::ExtStressSolverSettings settings;
+        settings.hardness = 0.01;
+        settings.stressLinearFactor = 10.0;
+        //settings.stressAngularFactor;
+        //settings.bondIterationsPerFrame;
+        //settings.graphReductionLevel;
+        m_solver = ExtStressSolver::create(*familyLL, settings);
+        m_solver->setAllNodesInfoFromLL();
+        stress_actor_created(actor);
+    }
+
+    ~BlastFamily() {
+        family->release(); // Do NOT call until all actors in family are gone!
+    };
+    
+    TkFamily* family;
+
+    // Stress
+	ExtStressSolver* m_solver = nullptr;
+	HashSet<BlastActor*>::type bodies;
+
     void stress_update(bool do_damage);
-    void stress_actor_created(BlastActor* actor);
-    void stress_actor_destroyed(BlastActor* actor);
+
+    void stress_actor_created(BlastActor *body)
+    {
+        TkActor *body_actor = body->actor;
+        if (m_solver->notifyActorCreated(*body_actor->getActorLL()))
+        {
+            bodies.insert(body);
+        }
+    }
+
+    void stress_actor_destroyed(BlastActor *body)
+    {
+        TkActor *body_actor = body->actor;
+        m_solver->notifyActorDestroyed(*body_actor->getActorLL());
+        bodies.erase(body);
+    }
 
 };
 

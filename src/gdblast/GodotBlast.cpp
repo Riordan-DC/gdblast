@@ -157,10 +157,10 @@ void BlastActor::test()
     test_actor->release();
 }
 
-void BlastActor::create_actor()
+BlastFamily* BlastActor::create_actor()
 {
-    ERR_FAIL_COND(chunks.empty());
-    ERR_FAIL_COND(bonds.empty()); // BUG: This needs to let the user know something wrong happened
+    //ERR_FAIL_COND(chunks.empty());
+    //ERR_FAIL_COND(bonds.empty()); // BUG: This needs to let the user know something wrong happened
 
     TkFramework *framework = NvBlastFramework::get_framework();
 
@@ -175,20 +175,11 @@ void BlastActor::create_actor()
     actor_desc.asset = asset;    // This field of TkActorDesc must be set to a valid asset pointer.
     actor = framework->createActor(actor_desc);
 
-    // Stress
-    TkFamily &m_family = actor->getFamily();
-    NvBlastFamily *familyLL = const_cast<NvBlastFamily *>(m_family.getFamilyLL());
-    if (familyLL == NULL)
-    {
-        printf("Family is null\n");
-        return;
-    }
-    Nv::Blast::ExtStressSolverSettings settings;
-    m_solver = ExtStressSolver::create(*familyLL, settings);
-    stress_actor_created(this);
+    BlastFamily* family = memnew(BlastFamily(this));
+    return family;
 }
 
-void BlastActor::stress_update(bool do_damage)
+void BlastFamily::stress_update(bool do_damage)
 {
     for (auto it = bodies.getIterator(); !it.done(); ++it)
     {
@@ -220,26 +211,9 @@ void BlastActor::stress_update(bool do_damage)
         m_solver->generateFractureCommands(commands);
         if (commands.bondFractureCount > 0)
         {
-            TkFamily &family = actor->getFamily();
-            family.applyFracture(&commands);
+            family->applyFracture(&commands);
         }
     }
-}
-
-void BlastActor::stress_actor_created(BlastActor *body)
-{
-    TkActor *body_actor = body->actor;
-    if (m_solver->notifyActorCreated(*body_actor->getActorLL()))
-    {
-        bodies.insert(body);
-    }
-}
-
-void BlastActor::stress_actor_destroyed(BlastActor *body)
-{
-    TkActor *body_actor = body->actor;
-    m_solver->notifyActorDestroyed(*body_actor->getActorLL());
-    bodies.erase(body);
 }
 
 void BlastActor::apply_radial_damage(Vector3 position, float damage_in_health, float min_radius, float max_radius)
@@ -407,10 +381,6 @@ void BlastActor::_bind_methods()
     ClassDB::bind_method(D_METHOD("set_material", "health", "min_damage_threshold", "max_damage_threshold"), &BlastActor::set_material);
 
     ClassDB::bind_method(D_METHOD("set_body"), &BlastActor::set_body);
-
-    ClassDB::bind_method(D_METHOD("stress_update"), &BlastActor::stress_update);
-    ClassDB::bind_method(D_METHOD("stress_actor_created"), &BlastActor::stress_actor_created);
-    ClassDB::bind_method(D_METHOD("stress_actor_destroyed"), &BlastActor::stress_actor_destroyed);
 }
 
 ///////////////////////////////////////////
