@@ -13,8 +13,12 @@ This causes a minor but easy to fix error in PhysX shared where you must change 
 3. I needed the extension for shaders, asset utils, and stress. This required a small modification to change
 std::pow to just pow. 
 
-Env vars
+Env vars (Can be set in Cmake GUI in Environment...)
 PM_CMakeModules_PATH  C:\packman-repo\chk\CMakeModules\1.1.0
+
+
+# $env:VARIABLE_NAME = "Value"
+# $env:PM_CMakeModules_PATH = "C:\packman-repo\chk\CMakeModules\1.1.0"
 
 Cmake defines
 

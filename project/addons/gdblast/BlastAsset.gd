@@ -21,11 +21,11 @@ var blast_family: BlastFamily
 var debug_drawer: ImmediateMesh
 var mass_per_chunk: float = 0.0
 
-var health: float = 20.0
+@export var health: float = 20.0
 ## Ignore damage below health * min_damage
-var min_damage: float = 0.1
+@export var min_damage: float = 0.1
 ## Less than 1.0 means it will take at minimum 2 hits to break
-var max_damage: float = 1.0
+@export var max_damage: float = 1.0
 
 func _ready() -> void:
 	if facade: facade.hide()
@@ -247,7 +247,7 @@ func integrate_forces(state: PhysicsDirectBodyState3D, rigidbody: RigidBody3D) -
 				var max_force: float = 100.0
 				var damage: float = force_power * 0.2
 				var max_range: float = 0.8
-				var range: float = 1.0 #(max_force / clamp(damage, 0.0, max_force)) * max_range
+				var range: float = 1.5 #(max_force / clamp(damage, 0.0, max_force)) * max_range
 				blast_actor.apply_spread_damage(pos, damage, 0.5, range)
 				#DebugDraw.draw_box(state.get_contact_collider_position(contact), Vector3.ONE * range, Color.RED, 60)
 	

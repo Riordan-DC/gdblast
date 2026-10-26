@@ -12,10 +12,14 @@ Platforms supported:
 todo:
 . as soon as we fracture. integrate forces stops being applied correctly to new pieces
 
+. bend factor. Allow objects to loosen on impact before breaking like in Red Faction
+. Break effects like dust emitted from fracture positions
+
 . good and useful error codes
 . documentation
 . tutorial
 . debug for rendering bonds
+. debug timers
 
 . create the BlastFamily object. Created once on initial create_actor.
     . Manages stress

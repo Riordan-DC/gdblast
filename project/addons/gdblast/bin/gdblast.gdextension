@@ -1,0 +1,30 @@
+[configuration]
+
+entry_symbol = "gdblast_library_init"
+compatibility_minimum = "4.3"
+reloadable = true
+
+[libraries]
+
+windows.debug.x86_32 = "res://addons/gdblast/bin/gdblast.windows.template_debug.x86_32.dll"
+windows.release.x86_32 = "res://addons/gdblast/bin/gdblast.windows.template_release.x86_32.dll"
+windows.debug.x86_64 = "res://addons/gdblast/bin/gdblast.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://addons/gdblast/bin/gdblast.windows.template_release.x86_64.dll"
+
+[dependencies]
+windows.debug.x86_64 = {
+    "res://bin/NvBlastDEBUG_x64.dll" : "",
+    "res://bin/NvBlastTkDEBUG_x64.dll" : "",
+    "res://bin/NvBlastExtAssetUtilsDEBUG_x64.dll" : "",
+    "res://bin/NvBlastExtShadersDEBUG_x64.dll" : "",
+    "res://bin/NvBlastExtStressDEBUG_x64.dll" : "",
+    "res://bin/NvBlastGlobalsDEBUG_x64.dll" : "",
+}
+windows.release.x86_64 = {
+    "res://bin/NvBlast_x64.dll" : "",
+    "res://bin/NvBlastTk_x64.dll" : "",
+    "res://bin/NvBlastExtAssetUtils_x64.dll" : "",
+    "res://bin/NvBlastExtShaders_x64.dll" : "",
+    "res://bin/NvBlastExtStress_x64.dll" : "",
+    "res://bin/NvBlastGlobals_x64.dll" : "",
+}
