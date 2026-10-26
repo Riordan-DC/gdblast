@@ -1,9 +1,6 @@
 extends Node3D
 
 
-func _process(delta: float) -> void:
-	DebugDraw.set_text("fps", str(Engine.get_frames_per_second()))
-
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var result: Dictionary = {}
@@ -40,7 +37,6 @@ func _physics_process(delta: float) -> void:
 			q.collision_mask = 0xFFFFFFFF
 			result = dss.intersect_ray(q)
 		if !result.is_empty():
-			DebugDraw.draw_box(result.position, Vector3.ONE * 1.0, Color.RED, 60)
 			apply_radial_damage(result.position, 1.0, 0.1, 0.1, 50.0)
 
 func fire_projectile(from: Vector3, to: Vector3) -> void:

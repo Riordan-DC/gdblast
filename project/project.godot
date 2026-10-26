@@ -19,10 +19,6 @@ run/main_scene="uid://vgxy54uokqfg"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-DebugDraw="*res://addons/zylann.debug_draw/debug_draw.gd"
-
 [display]
 
 window/size/viewport_width=1920

@@ -249,7 +249,6 @@ func integrate_forces(state: PhysicsDirectBodyState3D, rigidbody: RigidBody3D) -
 				var max_range: float = 0.8
 				var range: float = 1.5 #(max_force / clamp(damage, 0.0, max_force)) * max_range
 				blast_actor.apply_spread_damage(pos, damage, 0.5, range)
-				#DebugDraw.draw_box(state.get_contact_collider_position(contact), Vector3.ONE * range, Color.RED, 60)
 	
 	state.integrate_forces()
 	
