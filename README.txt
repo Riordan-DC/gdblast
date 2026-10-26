@@ -1,7 +1,9 @@
 gdblast
-by Riordan Callil 2025
+by Riordan Callil 2026
 
 Middleware between Godot and Nvidia Blast
+
+https://github.com/NVIDIAGameWorks/Blast
 
 Platforms tested:
 . windows
